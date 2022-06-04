@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Order details</h1>
+<form action="{{ url_for('index') }}" method="post">
+    <label for="p_type">Category:</label>
+    <select name="pet_type" id="p_type" required>
+        <option disabled selected value>...</option>
+        <option value="swimswuit">Swimsuit</option>
+        <option value="tights">Tights</option>
+        <option value=" rashguard">Rash Guard</option>
+    </select><br><br>
+    <! -- Code -->
+    <label for="code_name">Code # of Item:</label>
+    <input type="text" name="codename" id="code_name" required><br><br>
+    <! -- Size -->
+    <label for="size">Size:</label>
+    <input type="text" name="order_size" id="size"><br><br>
+    <! -- Address -->
+    <label for="u_address">Address:</label>
+    <input type="text" name="address" id="u_address"size><br>
+    <! -- Order details -->
+    <textarea name="Special notes to seller" placeholder="Tell us here if you want to say more details about your order" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="Send Order">
+</form>
+
+<a href="{{url_for('logout')}}">Press here to logout</a>
+{% endblock %}
